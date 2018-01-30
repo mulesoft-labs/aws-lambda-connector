@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<namespace xmlns="http://www.mulesoft.org/schema/mule/tooling.attributes" xmlns:mule="http://www.mulesoft.org/schema/mule/core" url="http://www.mulesoft.org/schema/mule/aws-lambda" prefix="aws-lambda">
+  <global-cloud-connector versions="[3.5.0,8.0.0]" caption="Amazon Lambda" description="" icon="" localId="parentConfig" image="" abstract="true" extends="http://www.mulesoft.org/schema/mule/aws-lambda/abstractAws-lambdaConnectorGeneric"></global-cloud-connector>
+  <nested caption="" description="" localId="connection-pooling-profile" abstract="true">
+    <radioBoolean name="defaultPoolingProfile" caption="Use default connection pool configuration" description="Use default connection pool configuration." fillLine="true"></radioBoolean>
+    <radioBoolean name="customPoolingProfile" caption="Define connection pool configuration" description="Define connection pool configuration." fillLine="true"></radioBoolean>
+    <integer defaultValue="5" min="-1" step="0" name="maxActive" caption="Max active" description="Controls the maximum number of connections that can be borrowed from the pool at one time. When set to a negative value, there is no limit to the number of connections that may be active at one time. When maxActive is exceeded, the pool is said to be exhausted." controlled="customPoolingProfile" indented="true" fillLine="true"></integer>
+    <integer defaultValue="5" min="-1" step="0" name="maxIdle" caption="Max idle" description="Controls the maximum number of connections that can sit idle in the pool at any time. When set to a negative value, there is no limit to the number of connections that may be idle at one time." controlled="customPoolingProfile" indented="true" fillLine="true"></integer>
+    <enum defaultValue="INITIALISE_ONE" name="initialisationPolicy" caption="Initialisation policy" description="Determines how connections in a pool should be initialized. The possible values are: INITIALISE_NONE (will not load any connection into the pool on startup), INITIALISE_ONE (will load one initial connection into the pool on startup), or INITIALISE_ALL (will load all connections in the pool on startup)" alwaysFill="true" controlled="customPoolingProfile" indented="true">
+      <option value="INITIALISE_NONE"></option>
+      <option value="INITIALISE_ONE"></option>
+      <option value="INITIALISE_ALL"></option>
+    </enum>
+    <enum defaultValue="WHEN_EXHAUSTED_GROW" name="exhaustedAction" caption="Exhausted action" description="Specifies the behavior of the connection pool when the pool is exhausted. Possible values are: &quot;WHEN_EXHAUSTED_FAIL&quot;, which will throw a NoSuchElementException, &quot;WHEN_EXHAUSTED_WAIT&quot;, which will block by invoking Object.wait(long) until a new or idle object is available, or WHEN_EXHAUSTED_GROW, which will create a new connection and return it, essentially making maxActive meaningless. If a positive maxWait value is supplied, it will block for at most that many milliseconds, after which a NoSuchElementException will be thrown. If maxThreadWait is a negative value, it will block indefinitely." alwaysFill="true" controlled="customPoolingProfile" indented="true">
+      <option value="WHEN_EXHAUSTED_WAIT"></option>
+      <option value="WHEN_EXHAUSTED_FAIL"></option>
+      <option value="WHEN_EXHAUSTED_GROW"></option>
+    </enum>
+    <integer defaultValue="5" min="-1" step="0" name="maxWait" caption="Max wait" description="When exhausted action is Wait (or block) this is the amount of time in milliseconds that the pool will wait before failing. Setting a negative value will block indefinitely until an idle instance becomes available." controlled="customPoolingProfile" indented="true" fillLine="true"></integer>
+    <integer defaultValue="1800000" min="-1" step="0" name="minEvictionMillis" caption="Min eviction (ms)" description="Determines the minimum amount of time a connection may sit idle in the pool before it is eligible for eviction. When non-positive, no connections will be evicted from the pool due to idle time alone." controlled="customPoolingProfile" indented="true" fillLine="true"></integer>
+    <integer defaultValue="-1" min="-1" step="0" name="evictionCheckIntervalMillis" caption="Eviction check interval (ms)" description="Specifies the number of milliseconds between runs of the connection evictor. When non-positive, no connection evictor is executed." controlled="customPoolingProfile" indented="true" fillLine="true"></integer>
+  </nested>
+  <nested caption="" description="" localId="reconnectionStrategyElement" abstract="true">
+    <label name="connectionLabel" caption="Define how mule should attempt to handle a connection failure" description=""></label>
+    <radioBoolean name="noReconnection" caption="Do not use a Reconnection strategy" description="Disable reconection strategy" fillLine="true"></radioBoolean>
+    <radioBoolean name="standardReconnection" caption="Standard Reconnection" description="A reconnection strategy that allows the user to configure how many times a reconnection should be attempted and how long to wait between attempts." fillLine="true"></radioBoolean>
+    <integer defaultValue="2000" min="1" max="2147483647" step="1" name="reconnectionFrequency" caption="Frequency (ms)" description="How often (in ms) to reconnect" controlled="standardReconnection" indented="true"></integer>
+    <integer defaultValue="2" min="1" max="2147483647" step="1" name="reconnectionAttemps" caption="Reconnection Attempts" description="How many reconnection attempts to make" controlled="standardReconnection,!reconnectForever" indented="true"></integer>
+    <boolean name="reconnectForever" caption="Reconnect Forever" description="A reconnection strategy that retries an infinite number of times at the specified frequency." supportsExpressions="false" controlled="standardReconnection" indented="true"></boolean>
+    <radioBoolean name="customReconnection" caption="Custom Reconnection" description="A user-defined reconnection strategy." fillLine="true"></radioBoolean>
+    <classname name="class" caption="Class" description="A class that implements the RetryPolicyTemplate interface." controlled="customReconnection" indented="true"></classname>
+    <childElement allowMultiple="true" name="http://www.springframework.org/schema/beans/property" caption="Properties" description="Property elements." controlled="customReconnection"></childElement>
+  </nested>
+  <global-cloud-connector versions="[3.5.0,8.0.0]" caption="Amazon Lambda: Configuration" description="Global Configuration configuration information." icon="icons/theme.classic/aws-lambda-connector-small.png" localId="config" image="icons/theme.classic/aws-lambda-connector-large.png" abstract="false" extends="http://www.mulesoft.org/schema/mule/aws-lambda/parentConfig" connectivityTesting="on" connectivityTestingLabel="Test Connection..." metaData="static" metaDataKeyDisplay="DISPLAY_NAME" supportsUserDefinedMetaData="false">
+    <attribute-category caption="General" description="Aws-lambda configuration properties.">
+      <group id="aws-lambdaGenericProperties" caption="Basic Settings">
+        <name name="name" caption="Name" description="Give a name to this configuration so it can be later referenced by config-ref." required="true"></name>
+      </group>
+      <group id="connection" caption="Connection">
+        <string name="accessKey" caption="Access Key" description="AWS access key." required="true" javaType="java.lang.String"></string>
+        <string name="secretKey" caption="Secret Key" description="AWS secret key." required="true" javaType="java.lang.String"></string>
+      </group>
+      <group id="general" caption="General">
+        <enum allowsCustom="true" name="region" caption="Region" description="Queue Region." supportsExpressions="false" required="false" javaType="com.amazonaws.regions.Regions">
+          <option value="AP_NORTHEAST_1"></option>
+          <option value="AP_NORTHEAST_2"></option>
+          <option value="AP_SOUTHEAST_1"></option>
+          <option value="AP_SOUTHEAST_2"></option>
+          <option value="AP_SOUTH_1"></option>
+          <option value="CA_CENTRAL_1"></option>
+          <option value="CN_NORTHWEST_1"></option>
+          <option value="CN_NORTH_1"></option>
+          <option value="EU_CENTRAL_1"></option>
+          <option value="EU_WEST_1"></option>
+          <option value="EU_WEST_2"></option>
+          <option value="EU_WEST_3"></option>
+          <option value="GovCloud"></option>
+          <option value="SA_EAST_1"></option>
+          <option value="US_EAST_1"></option>
+          <option value="US_EAST_2"></option>
+          <option value="US_WEST_1"></option>
+          <option value="US_WEST_2"></option>
+        </enum>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Pooling Profile" description="Pooling profile options.">
+      <group id="poolingProfile" caption="Pooling Profile">
+        <childElement inplace="true" name="http://www.mulesoft.org/schema/mule/aws-lambda/connection-pooling-profile" caption="" description="" valuePersistence="org.mule.tooling.ui.modules.core.widgets.meta.PoolingProfileValuePersistence"></childElement>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Reconnection" description="Reconnection options.">
+      <group id="reconnectionStrategies" caption="Strategies">
+        <childElement inplace="true" name="http://www.mulesoft.org/schema/mule/core/reconnectionStrategyElement" caption="" description="" valuePersistence="org.mule.tooling.ui.modules.core.widgets.meta.HTTPTransactionValuePersistence"></childElement>
+        <childElement allowSubTypes="true" allowedSubTypes="http://www.mulesoft.org/schema/mule/core/reconnect,http://www.mulesoft.org/schema/mule/core/reconnect-custom-strategy,http://www.mulesoft.org/schema/mule/core/reconnect-forever" name="http://www.mulesoft.org/schema/mule/core/abstractReconnectionStrategy" caption="" description="" visibleInDialog="false"></childElement>
+      </group>
+    </attribute-category>
+  </global-cloud-connector>
+  <cloud-connector caption="Abstractaws-lambdaconnectorgeneric" description="Interact with Aws-lambda." icon="icons/theme.classic/aws-lambda-connector-small.png" localId="abstractAws-lambdaConnectorGeneric" image="icons/theme.classic/aws-lambda-connector-large.png" abstract="true">
+    <attribute-category caption="General" description="General.">
+      <group id="abstractAws-lambdaConnectorGeneric" caption="Basic Settings">
+        <globalRef requiredType="http://www.mulesoft.org/schema/mule/aws-lambda/config" name="config-ref" caption="Connector Configuration" description="Specify which configuration to use for this invocation." required="true"></globalRef>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector versions="[3.5.0,8.0.0]" aliasId="org.mule.tooling.ui.modules.core.pattern.aws-lambda" caption="Amazon Lambda" description="" icon="icons/theme.classic/aws-lambda-connector-small.png" localId="aws-lambda-connector" image="icons/theme.classic/aws-lambda-connector-large.png" extends="http://www.mulesoft.org/schema/mule/aws-lambda/abstractAws-lambdaConnectorGeneric">
+    <attribute-category caption="General" description="General.">
+      <group id="aws-lambdaConnectorGeneric" caption="Basic Settings">
+        <modeSwitch alwaysCombo="true" name="Aws-lambda operations to execute" caption="Operation" description="Operation.">
+          <no-operation abstractElement="http://www.mulesoft.org/schema/mule/aws-lambda/abstractAws-lambdaConnectorGeneric" versions="[3.5.0,8.0.0]" connector-name="processor"></no-operation>
+          <mode modeId="http://www.mulesoft.org/schema/mule/aws-lambda/call-function" modeLabel="Call function"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/aws-lambda/list-functions" modeLabel="List functions"></mode>
+        </modeSwitch>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.lang.String" caption="Call Function" icon="icons/theme.classic/aws-lambda-connector-small.png" localId="call-function" image="icons/theme.classic/aws-lambda-connector-large.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/aws-lambda/abstractAws-lambdaConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="functionName" caption="Function Name" description="" required="true" javaType="java.lang.String"></string>
+        <string defaultValue="#[payload]" name="content-ref" caption="Content Reference" description="" required="false" javaType="java.lang.Object"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="com.amazonaws.services.lambda.model.ListFunctionsResult" caption="List Functions" icon="icons/theme.classic/aws-lambda-connector-small.png" localId="list-functions" image="icons/theme.classic/aws-lambda-connector-large.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/aws-lambda/abstractAws-lambdaConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General."></attribute-category>
+  </cloud-connector>
+</namespace>

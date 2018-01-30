@@ -1,0 +1,1 @@
+http\://www.mulesoft.org/schema/mule/aws-lambda=org.mule.modules.awslambda.generated.config.AwsLambdaNamespaceHandler

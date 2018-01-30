@@ -1,0 +1,144 @@
+{
+  "minMuleVersion": "3.5.0",
+  "requiresEntitlement": false,
+  "requiresEnterpriseLicense": false,
+  "configs": [
+    {
+      "configElementName": "config",
+      "attributes": [
+        {
+          "javaTypeName": "String",
+          "fullQualifiedJavaTypeName": "java.lang.String",
+          "isOptional": false,
+          "isRefOnly": false,
+          "isPayload": false,
+          "isComplexType": false,
+          "isEnum": false,
+          "isString": true,
+          "typeMirror": "java.lang.String",
+          "isHttpCallback": false,
+          "isArrayOrListOrMap": false,
+          "javaName": "accessKey",
+          "description": "AWS access key"
+        },
+        {
+          "javaTypeName": "String",
+          "fullQualifiedJavaTypeName": "java.lang.String",
+          "isOptional": false,
+          "isRefOnly": false,
+          "isPayload": false,
+          "isComplexType": false,
+          "isEnum": false,
+          "isString": true,
+          "typeMirror": "java.lang.String",
+          "isHttpCallback": false,
+          "isArrayOrListOrMap": false,
+          "javaName": "secretKey",
+          "description": "AWS secret key"
+        },
+        {
+          "javaTypeName": "Regions",
+          "fullQualifiedJavaTypeName": "com.amazonaws.regions.Regions",
+          "isOptional": true,
+          "isRefOnly": false,
+          "isPayload": false,
+          "isComplexType": false,
+          "isEnum": true,
+          "isString": false,
+          "typeMirror": "com.amazonaws.regions.Regions",
+          "isHttpCallback": false,
+          "isArrayOrListOrMap": false,
+          "javaName": "region",
+          "description": "Queue Region"
+        }
+      ],
+      "javaName": "ConnectorConfig",
+      "friendlyName": "Configuration",
+      "type": "ConnectionManagementConfig"
+    }
+  ],
+  "attributes": [],
+  "processors": [
+    {
+      "isPaged": false,
+      "isBatch": false,
+      "samples": [],
+      "javaReturnType": {
+        "javaTypeName": "ListFunctionsResult",
+        "fullQualifiedJavaTypeName": "com.amazonaws.services.lambda.model.ListFunctionsResult",
+        "isOptional": false,
+        "isRefOnly": false,
+        "isPayload": false,
+        "isComplexType": false,
+        "isEnum": false,
+        "isString": false,
+        "isHttpCallback": false,
+        "description": ""
+      },
+      "parameters": [],
+      "apiDocUrl": "",
+      "javaName": "listFunctions",
+      "friendlyName": "List functions",
+      "xsdName": "list-functions"
+    },
+    {
+      "isPaged": false,
+      "isBatch": false,
+      "samples": [],
+      "javaReturnType": {
+        "javaTypeName": "String",
+        "fullQualifiedJavaTypeName": "java.lang.String",
+        "isOptional": false,
+        "isRefOnly": false,
+        "isPayload": false,
+        "isComplexType": false,
+        "isEnum": false,
+        "isString": false,
+        "isHttpCallback": false,
+        "description": "A greeting message"
+      },
+      "parameters": [
+        {
+          "javaTypeName": "String",
+          "fullQualifiedJavaTypeName": "java.lang.String",
+          "isOptional": false,
+          "isRefOnly": false,
+          "isPayload": false,
+          "isComplexType": false,
+          "isEnum": false,
+          "isString": true,
+          "typeMirror": "java.lang.String",
+          "isHttpCallback": false,
+          "isArrayOrListOrMap": false,
+          "javaName": "functionName"
+        },
+        {
+          "javaTypeName": "Object",
+          "fullQualifiedJavaTypeName": "java.lang.Object",
+          "defaultValue": "#[payload]",
+          "isOptional": true,
+          "isRefOnly": false,
+          "isPayload": false,
+          "isComplexType": false,
+          "isEnum": false,
+          "isString": false,
+          "typeMirror": "java.lang.Object",
+          "isHttpCallback": false,
+          "isArrayOrListOrMap": false,
+          "javaName": "content"
+        }
+      ],
+      "apiDocUrl": "",
+      "javaName": "callFunction",
+      "friendlyName": "Call function",
+      "description": "Custom processor",
+      "xsdName": "call-function"
+    }
+  ],
+  "filters": [],
+  "transformers": [],
+  "sources": [],
+  "javaName": "AWSLambdaConnector",
+  "friendlyName": "Amazon Lambda",
+  "xsdName": "aws-lambda"
+}
