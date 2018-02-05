@@ -45,14 +45,9 @@ public class AWSLambdaConnector {
      */
     @Processor
     public String callFunction(String functionName, @Default("#[payload]") Object content) {
-    	
-    	String payload1 = "{\n" +
-                " \"city\": \"Paris\",\n" +
-                " \"countryCode\": \"FR\"\n" +
-                "}";
-    	
+    	    	
     	InvokeRequest request = new InvokeRequest();
-        request.withFunctionName(functionName).withPayload(payload1);
+        request.withFunctionName(functionName).withPayload(content.toString());
         
         InvokeResult invokeResult = null;
         
@@ -67,8 +62,7 @@ public class AWSLambdaConnector {
         
         if (invokeResult.getStatusCode() == 200){
         	ByteBuffer byteBuffer = invokeResult.getPayload();
-        	 
-            
+        	             
             try {
                 rawJson = new String(byteBuffer.array(), "UTF-8");
             }catch (Exception e) {

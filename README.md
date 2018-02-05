@@ -1,23 +1,16 @@
-# AWSLambda Anypoint Connector
+# Amazon AWS Lambda Connector
 
-[Connector description including destination service or application with]
+MuleSoft Anypoint Connector to Amazon AWS Lambda. 
 
 # Mule supported versions
 Examples:
-Mule 3.4.x, 3.5.x
-Mule 3.4.1
+Mule 3.8.x+
 
 # [Destination service or application name] supported versions
-Example:
-Oracle E-Business Suite 12.1 and above.
+Amazon AWS Lambda
 
 #Service or application supported modules
-Example:
-Oracle CRM
-Oracle Financials
-or 
-Salesforce API v.24
-Salesforce Metadata API
+Amazon AWS Lambda SDK 1.11.268
 
 
 # Installation 

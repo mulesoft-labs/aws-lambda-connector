@@ -2,7 +2,7 @@
 <?artifactRepository version='1.1.0'?>
 <repository name='file:/Users/dejimjuang/Workspace/examples/aws-lambda-connector/target/update-site/ - artifacts' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1'>
   <properties size='2'>
-    <property name='p2.timestamp' value='1517342635179'/>
+    <property name='p2.timestamp' value='1517851106225'/>
     <property name='p2.compressed' value='false'/>
   </properties>
   <mappings size='3'>
@@ -11,19 +11,19 @@
     <rule filter='(&amp; (classifier=org.eclipse.update.feature))' output='${repoUrl}/features/${id}_${version}.jar'/>
   </mappings>
   <artifacts size='2'>
-    <artifact classifier='org.eclipse.update.feature' id='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0' version='1.0.0.201801301403'>
+    <artifact classifier='org.eclipse.update.feature' id='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0' version='1.0.0.201802050918'>
       <properties size='4'>
         <property name='artifact.size' value='652'/>
         <property name='download.size' value='652'/>
-        <property name='download.md5' value='848800d15566b60aadd3378eb84e3b65'/>
+        <property name='download.md5' value='9997b9706a54b4385f7981473f5b0dd3'/>
         <property name='download.contentType' value='application/zip'/>
       </properties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='org.mule.tooling.ui.contribution.aws-lambda.3.5.0' version='1.0.0.201801301403'>
+    <artifact classifier='osgi.bundle' id='org.mule.tooling.ui.contribution.aws-lambda.3.5.0' version='1.0.0.201802050918'>
       <properties size='3'>
-        <property name='artifact.size' value='3667712'/>
-        <property name='download.size' value='3667712'/>
-        <property name='download.md5' value='cf24b847c9467f8af902be6b93335cce'/>
+        <property name='artifact.size' value='3667528'/>
+        <property name='download.size' value='3667528'/>
+        <property name='download.md5' value='3f1739cf500b3d64cd35eab20f1be521'/>
       </properties>
     </artifact>
   </artifacts>
