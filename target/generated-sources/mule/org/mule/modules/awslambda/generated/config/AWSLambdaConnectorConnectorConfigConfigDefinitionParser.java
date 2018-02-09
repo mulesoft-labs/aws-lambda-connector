@@ -18,7 +18,7 @@ import org.springframework.util.xml.DomUtils;
 import org.w3c.dom.Element;
 
 @SuppressWarnings("all")
-@Generated(value = "Mule DevKit Version 3.9.0", date = "2018-02-05T09:18:17-08:00", comments = "Build UNNAMED.2793.f49b6c7")
+@Generated(value = "Mule DevKit Version 3.9.0", date = "2018-02-09T01:54:57-08:00", comments = "Build UNNAMED.2793.f49b6c7")
 public class AWSLambdaConnectorConnectorConfigConfigDefinitionParser
     extends AbstractDevkitBasedDefinitionParser
 {

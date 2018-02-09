@@ -14,6 +14,16 @@
         <version>3.9.0</version>
     </parent>
     
+	 <distributionManagement>
+	  <repository>
+	    <uniqueVersion>false</uniqueVersion>
+            <id>e6c8356b-f191-46fe-8991-2ee0b1096472</id>
+            <name>Mulesoft Solutions Consulting</name>
+            <url>https://maven.anypoint.mulesoft.com/api/v1/organizations/e6c8356b-f191-46fe-8991-2ee0b1096472/maven</url>
+            <layout>default</layout>
+	  </repository>
+	</distributionManagement>
+    
     <dependencies>
     	<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-lambda -->
 		<dependency>
