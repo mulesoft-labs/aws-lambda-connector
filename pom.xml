@@ -6,7 +6,7 @@
     <artifactId>aws-lambda-connector</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>mule-module</packaging>
-    <name>Mule AWSLambda Anypoint Connector</name>
+    <name>AWS Lambda Connector</name>
 
     <parent>
         <groupId>org.mule.tools.devkit</groupId>

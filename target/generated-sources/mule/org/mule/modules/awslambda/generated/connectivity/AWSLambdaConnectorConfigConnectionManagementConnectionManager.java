@@ -43,7 +43,7 @@ import org.mule.modules.awslambda.generated.pooling.DevkitGenericKeyedObjectPool
  * 
  */
 @SuppressWarnings("all")
-@Generated(value = "Mule DevKit Version 3.9.0", date = "2018-02-09T01:54:57-08:00", comments = "Build UNNAMED.2793.f49b6c7")
+@Generated(value = "Mule DevKit Version 3.9.0", date = "2018-02-09T01:59:14-08:00", comments = "Build UNNAMED.2793.f49b6c7")
 public class AWSLambdaConnectorConfigConnectionManagementConnectionManager
     extends ExpressionEvaluatorSupport
     implements MetadataAware, MuleContextAware, ProcessAdapter<AWSLambdaConnectorConnectionManagementAdapter> , Capabilities, Disposable, Initialisable, Testable, ConnectionManagementConnectionManager<ConnectionManagementConfigAWSLambdaConnectorConnectionKey, AWSLambdaConnectorConnectionManagementAdapter, ConnectorConfig>

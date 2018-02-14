@@ -2,23 +2,36 @@
 <?metadataRepository version='1.1.0'?>
 <repository name='file:/Users/dejimjuang/Workspace/examples/aws-lambda-connector/target/update-site/ - metadata' type='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='1.0.0'>
   <properties size='2'>
-    <property name='p2.timestamp' value='1518213307518'/>
+    <property name='p2.timestamp' value='1518213564307'/>
     <property name='p2.compressed' value='false'/>
   </properties>
   <units size='4'>
-    <unit id='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0.feature.group' version='1.0.0.201802091354' singleton='false'>
-      <update id='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0.feature.group' range='[0.0.0,1.0.0.201802091354)' severity='0'/>
+    <unit id='file:/Users/dejimjuang/Workspace/examples/aws-lambda-connector/target/classes/category.xml.org.mule.modules' version='1.0.0.2--cKMycs7735I373K59CK'>
+      <properties size='2'>
+        <property name='org.eclipse.equinox.p2.name' value='Community'/>
+        <property name='org.eclipse.equinox.p2.type.category' value='true'/>
+      </properties>
+      <provides size='1'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='file:/Users/dejimjuang/Workspace/examples/aws-lambda-connector/target/classes/category.xml.org.mule.modules' version='1.0.0.2--cKMycs7735I373K59CK'/>
+      </provides>
+      <requires size='1'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0.feature.group' range='[1.0.0.201802091359,1.0.0.201802091359]'/>
+      </requires>
+      <touchpoint id='null' version='0.0.0'/>
+    </unit>
+    <unit id='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0.feature.group' version='1.0.0.201802091359' singleton='false'>
+      <update id='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0.feature.group' range='[0.0.0,1.0.0.201802091359)' severity='0'/>
       <properties size='3'>
         <property name='org.eclipse.equinox.p2.name' value='Amazon Lambda Connector (Mule 3.5.0+)'/>
         <property name='org.eclipse.equinox.p2.provider' value='Mulesoft, Inc.'/>
         <property name='org.eclipse.equinox.p2.type.group' value='true'/>
       </properties>
       <provides size='1'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0.feature.group' version='1.0.0.201802091354'/>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0.feature.group' version='1.0.0.201802091359'/>
       </provides>
       <requires size='2'>
-        <required namespace='org.eclipse.equinox.p2.iu' name='org.mule.tooling.ui.contribution.aws-lambda.3.5.0' range='[1.0.0.201802091354,1.0.0.201802091354]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0.feature.jar' range='[1.0.0.201802091354,1.0.0.201802091354]'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.mule.tooling.ui.contribution.aws-lambda.3.5.0' range='[1.0.0.201802091359,1.0.0.201802091359]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0.feature.jar' range='[1.0.0.201802091359,1.0.0.201802091359]'>
           <filter>
             (org.eclipse.update.install.features=true)
           </filter>
@@ -31,21 +44,21 @@
         </license>
       </licenses>
     </unit>
-    <unit id='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0.feature.jar' version='1.0.0.201802091354'>
+    <unit id='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0.feature.jar' version='1.0.0.201802091359'>
       <properties size='2'>
         <property name='org.eclipse.equinox.p2.name' value='Amazon Lambda Connector (Mule 3.5.0+)'/>
         <property name='org.eclipse.equinox.p2.provider' value='Mulesoft, Inc.'/>
       </properties>
       <provides size='3'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0.feature.jar' version='1.0.0.201802091354'/>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0.feature.jar' version='1.0.0.201802091359'/>
         <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
-        <provided namespace='org.eclipse.update.feature' name='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0' version='1.0.0.201802091354'/>
+        <provided namespace='org.eclipse.update.feature' name='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0' version='1.0.0.201802091359'/>
       </provides>
       <filter>
         (org.eclipse.update.install.features=true)
       </filter>
       <artifacts size='1'>
-        <artifact classifier='org.eclipse.update.feature' id='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0' version='1.0.0.201802091354'/>
+        <artifact classifier='org.eclipse.update.feature' id='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0' version='1.0.0.201802091359'/>
       </artifacts>
       <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
       <touchpointData size='1'>
@@ -61,14 +74,14 @@
         </license>
       </licenses>
     </unit>
-    <unit id='org.mule.tooling.ui.contribution.aws-lambda.3.5.0' version='1.0.0.201802091354'>
-      <update id='org.mule.tooling.ui.contribution.aws-lambda.3.5.0' range='[0.0.0,1.0.0.201802091354)' severity='0'/>
+    <unit id='org.mule.tooling.ui.contribution.aws-lambda.3.5.0' version='1.0.0.201802091359'>
+      <update id='org.mule.tooling.ui.contribution.aws-lambda.3.5.0' range='[0.0.0,1.0.0.201802091359)' severity='0'/>
       <properties size='1'>
         <property name='org.eclipse.equinox.p2.name' value='Amazon Lambda'/>
       </properties>
       <provides size='3'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='org.mule.tooling.ui.contribution.aws-lambda.3.5.0' version='1.0.0.201802091354'/>
-        <provided namespace='osgi.bundle' name='org.mule.tooling.ui.contribution.aws-lambda.3.5.0' version='1.0.0.201802091354'/>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='org.mule.tooling.ui.contribution.aws-lambda.3.5.0' version='1.0.0.201802091359'/>
+        <provided namespace='osgi.bundle' name='org.mule.tooling.ui.contribution.aws-lambda.3.5.0' version='1.0.0.201802091359'/>
         <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
       </provides>
       <requires size='3'>
@@ -77,32 +90,19 @@
         <required namespace='osgi.bundle' name='org.mule.tooling.core' range='1.0.0'/>
       </requires>
       <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='org.mule.tooling.ui.contribution.aws-lambda.3.5.0' version='1.0.0.201802091354'/>
+        <artifact classifier='osgi.bundle' id='org.mule.tooling.ui.contribution.aws-lambda.3.5.0' version='1.0.0.201802091359'/>
       </artifacts>
       <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
       <touchpointData size='1'>
         <instructions size='2'>
           <instruction key='manifest'>
-            Bundle-SymbolicName: org.mule.tooling.ui.contribution.aws-lambda.3.5.0;singleton:=true&#xA;Bundle-Version: 1.0.0.201802091354
+            Bundle-SymbolicName: org.mule.tooling.ui.contribution.aws-lambda.3.5.0;singleton:=true&#xA;Bundle-Version: 1.0.0.201802091359
           </instruction>
           <instruction key='zipped'>
             true
           </instruction>
         </instructions>
       </touchpointData>
-    </unit>
-    <unit id='file:/Users/dejimjuang/Workspace/examples/aws-lambda-connector/target/classes/category.xml.org.mule.modules' version='1.0.0.2--cKMycs7735I373K59CA'>
-      <properties size='2'>
-        <property name='org.eclipse.equinox.p2.name' value='Community'/>
-        <property name='org.eclipse.equinox.p2.type.category' value='true'/>
-      </properties>
-      <provides size='1'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='file:/Users/dejimjuang/Workspace/examples/aws-lambda-connector/target/classes/category.xml.org.mule.modules' version='1.0.0.2--cKMycs7735I373K59CA'/>
-      </provides>
-      <requires size='1'>
-        <required namespace='org.eclipse.equinox.p2.iu' name='org.mule.tooling.ui.extension.aws-lambda-connector.3.5.0.feature.group' range='[1.0.0.201802091354,1.0.0.201802091354]'/>
-      </requires>
-      <touchpoint id='null' version='0.0.0'/>
     </unit>
   </units>
 </repository>
