@@ -29,6 +29,11 @@ public class AWSLambdaConnector {
     
     private AWSLambda amazonLambda;
 
+    /**
+     * List available Lambda functions processor
+     *
+     * @return ListFunctionsResult of Lambda functions
+     */
     @Processor
     public ListFunctionsResult listFunctions(){
     	
@@ -38,10 +43,11 @@ public class AWSLambdaConnector {
     	return response;    	
     }
     /**
-     * Custom processor
+     * Call Lambda function processor
      *
-     * @param friend Name to be used to generate a greeting message.
-     * @return A greeting message
+     * @param functionName Name of the function to execute in Lambda.
+     * @param content Content to pass to lambda function in JSON
+     * @return String of JSON response from AWS Lambda
      */
     @Processor
     public String callFunction(String functionName, @Default("#[payload]") Object content) {
