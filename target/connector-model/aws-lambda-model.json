@@ -73,12 +73,13 @@
         "isEnum": false,
         "isString": false,
         "isHttpCallback": false,
-        "description": ""
+        "description": "ListFunctionsResult of Lambda functions"
       },
       "parameters": [],
       "apiDocUrl": "",
       "javaName": "listFunctions",
       "friendlyName": "List functions",
+      "description": "List available Lambda functions processor",
       "xsdName": "list-functions"
     },
     {
@@ -95,7 +96,7 @@
         "isEnum": false,
         "isString": false,
         "isHttpCallback": false,
-        "description": "A greeting message"
+        "description": "String of JSON response from AWS Lambda"
       },
       "parameters": [
         {
@@ -110,7 +111,8 @@
           "typeMirror": "java.lang.String",
           "isHttpCallback": false,
           "isArrayOrListOrMap": false,
-          "javaName": "functionName"
+          "javaName": "functionName",
+          "description": "Name of the function to execute in Lambda."
         },
         {
           "javaTypeName": "Object",
@@ -125,13 +127,14 @@
           "typeMirror": "java.lang.Object",
           "isHttpCallback": false,
           "isArrayOrListOrMap": false,
-          "javaName": "content"
+          "javaName": "content",
+          "description": "Content to pass to lambda function in JSON"
         }
       ],
       "apiDocUrl": "",
       "javaName": "callFunction",
       "friendlyName": "Call function",
-      "description": "Custom processor",
+      "description": "Call Lambda function processor",
       "xsdName": "call-function"
     }
   ],

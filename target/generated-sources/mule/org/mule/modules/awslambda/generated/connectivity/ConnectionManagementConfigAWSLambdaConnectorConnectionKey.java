@@ -5,7 +5,7 @@ import javax.annotation.Generated;
 import org.mule.devkit.internal.connection.management.ConnectionManagementConnectionKey;
 
 @SuppressWarnings("all")
-@Generated(value = "Mule DevKit Version 3.9.0", date = "2018-02-09T01:59:14-08:00", comments = "Build UNNAMED.2793.f49b6c7")
+@Generated(value = "Mule DevKit Version 3.9.4", date = "2018-04-26T02:07:05-05:00", comments = "Build UNNAMED.2810.4347dd1")
 public class ConnectionManagementConfigAWSLambdaConnectorConnectionKey implements ConnectionManagementConnectionKey
 {
 

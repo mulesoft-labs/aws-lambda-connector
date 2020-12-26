@@ -97,8 +97,8 @@
   <cloud-connector returnType="java.lang.String" caption="Call Function" icon="icons/theme.classic/aws-lambda-connector-small.png" localId="call-function" image="icons/theme.classic/aws-lambda-connector-large.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/aws-lambda/abstractAws-lambdaConnectorGeneric" metaData="static">
     <attribute-category caption="General" description="General.">
       <group id="general" caption="General">
-        <string name="functionName" caption="Function Name" description="" required="true" javaType="java.lang.String"></string>
-        <string defaultValue="#[payload]" name="content-ref" caption="Content Reference" description="" required="false" javaType="java.lang.Object"></string>
+        <string name="functionName" caption="Function Name" description="Name of the function to execute in Lambda." required="true" javaType="java.lang.String"></string>
+        <string defaultValue="#[payload]" name="content-ref" caption="Content Reference" description="Content to pass to lambda function in JSON." required="false" javaType="java.lang.Object"></string>
       </group>
     </attribute-category>
   </cloud-connector>

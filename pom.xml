@@ -2,28 +2,29 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.mule.modules</groupId>
+    <!--<groupId>b85b361d-0842-4b70-af37-2723c2c3ae7e</groupId>-->
+    <groupId>com.mulesoft</groupId>
     <artifactId>aws-lambda-connector</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>mule-module</packaging>
     <name>AWS Lambda Connector</name>
 
     <parent>
-        <groupId>org.mule.tools.devkit</groupId>
-        <artifactId>mule-devkit-parent</artifactId>
-        <version>3.9.0</version>
-    </parent>
-    
+  	<groupId>org.mule.tools.devkit</groupId>
+  <artifactId>mule-devkit-parent</artifactId>
+  <version>3.9.4</version>
+</parent>
+
 	 <distributionManagement>
 	  <repository>
 	    <uniqueVersion>false</uniqueVersion>
-            <id>e6c8356b-f191-46fe-8991-2ee0b1096472</id>
-            <name>Mulesoft Solutions Consulting</name>
-            <url>https://maven.anypoint.mulesoft.com/api/v1/organizations/e6c8356b-f191-46fe-8991-2ee0b1096472/maven</url>
+            <id>anypoint</id>
+            <name>Demos Repository</name>
+            <url>https://maven.anypoint.mulesoft.com/api/v1/organizations/b85b361d-0842-4b70-af37-2723c2c3ae7e/maven</url>
             <layout>default</layout>
 	  </repository>
 	</distributionManagement>
-    
+
     <dependencies>
     	<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-lambda -->
 		<dependency>
@@ -31,13 +32,16 @@
 		    <artifactId>aws-java-sdk-lambda</artifactId>
 		    <version>1.11.268</version>
 		</dependency>
-    	
+
     </dependencies>
 
     <properties>
         <category>Community</category>
         <licensePath>LICENSE.md</licensePath>
         <devkit.studio.package.skip>false</devkit.studio.package.skip>
+        <mule.version>3.9.0</mule.version>
+	  	<mule.tools.version>1.2</mule.tools.version>
+	    <type>connector</type>
     </properties>
     <repositories>
         <repository>

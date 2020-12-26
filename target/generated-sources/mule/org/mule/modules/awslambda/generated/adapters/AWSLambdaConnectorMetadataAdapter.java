@@ -11,7 +11,7 @@ import org.mule.modules.awslambda.AWSLambdaConnector;
  * 
  */
 @SuppressWarnings("all")
-@Generated(value = "Mule DevKit Version 3.9.0", date = "2018-02-09T01:59:14-08:00", comments = "Build UNNAMED.2793.f49b6c7")
+@Generated(value = "Mule DevKit Version 3.9.4", date = "2018-04-26T02:07:05-05:00", comments = "Build UNNAMED.2810.4347dd1")
 public class AWSLambdaConnectorMetadataAdapter
     extends AWSLambdaConnectorCapabilitiesAdapter
     implements MetadataAware
@@ -19,8 +19,8 @@ public class AWSLambdaConnectorMetadataAdapter
 
     private final static String MODULE_NAME = "Amazon Lambda";
     private final static String MODULE_VERSION = "1.0.0-SNAPSHOT";
-    private final static String DEVKIT_VERSION = "3.9.0";
-    private final static String DEVKIT_BUILD = "UNNAMED.2793.f49b6c7";
+    private final static String DEVKIT_VERSION = "3.9.4";
+    private final static String DEVKIT_BUILD = "UNNAMED.2810.4347dd1";
     private final static String MIN_MULE_VERSION = "3.5.0";
 
     public String getModuleName() {

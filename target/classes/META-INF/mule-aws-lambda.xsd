@@ -49,7 +49,7 @@
   </xs:element>
   <xs:element xmlns="http://www.mulesoft.org/schema/mule/aws-lambda" xmlns:mule="http://www.mulesoft.org/schema/mule/core" type="List-functionsType" substitutionGroup="mule:abstract-message-processor" name="list-functions">
     <xs:annotation>
-      <xs:documentation></xs:documentation>
+      <xs:documentation>List available Lambda functions processor</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="List-functionsType">
@@ -65,7 +65,7 @@
   </xs:complexType>
   <xs:element xmlns="http://www.mulesoft.org/schema/mule/aws-lambda" xmlns:mule="http://www.mulesoft.org/schema/mule/core" type="Call-functionType" substitutionGroup="mule:abstract-message-processor" name="call-function">
     <xs:annotation>
-      <xs:documentation>Custom processor</xs:documentation>
+      <xs:documentation>Call Lambda function processor</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="Call-functionType">
@@ -78,12 +78,12 @@
         </xs:attribute>
         <xs:attribute type="xs:string" use="required" name="functionName">
           <xs:annotation>
-            <xs:documentation></xs:documentation>
+            <xs:documentation>Name of the function to execute in Lambda.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute type="xs:string" use="optional" default="#[payload]" name="content-ref">
           <xs:annotation>
-            <xs:documentation></xs:documentation>
+            <xs:documentation>Content to pass to lambda function in JSON</xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
